@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.maintenance.view.calendarwartung.CalendarWartungDataController">
+   <children>
+      <VBox spacing="10.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+         <children>
+            <Label text="Kalender Wartung">
+               <graphic>
+                  <ImageView pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../resource/icons/calendar48.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <GridPane hgap="10.0" prefWidth="400.0" vgap="10.0">
+               <columnConstraints>
+                  <ColumnConstraints maxWidth="103.0" minWidth="31.0" />
+                  <ColumnConstraints hgrow="ALWAYS" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" valignment="TOP" />
+               </rowConstraints>
+               <children>
+                  <Label text="Bemerkung" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="13.0" />
+                     </font></Label>
+                  <TextArea fx:id="remarkField" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="13.0" />
+                     </font></TextArea>
+                  <Label text="Datum">
+                     <font>
+                        <Font size="13.0" />
+                     </font></Label>
+                  <DatePicker fx:id="calendarField" showWeekNumbers="true" GridPane.columnIndex="1" />
+               </children>
+            </GridPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

@@ -1,0 +1,15 @@
+SAP zu vielen Zeilen für Stückzahlenexport:
+
+Schritt 1:
+Button Importierte Stückzahlen zu aktuellen Stückzahlen addieren
+(wenn Excel Datei zu lang wird)
+
+Schritt 2:
+Importiere Excel für Zeitraum von Jahr bis letzten importierten Stückzahlen
+
+Schritt 3:
+Button Schritt 2: Importierte Stückzahlen von aktuellen Stückzahlen subtrahieren
+
+
+
+

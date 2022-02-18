@@ -1,0 +1,4 @@
+Aufgrund von folgenden Ursachen wurde der RAM ständig erhöht:
+
+ConnectionManager Verbindung zur Datenbank sollte geschlossen werden beim automatischen aktualieren der Applikation.
+Es werden jetzt nicht immer neue Objekte erzeugt, sondern die vorhandenen aktualisiert.

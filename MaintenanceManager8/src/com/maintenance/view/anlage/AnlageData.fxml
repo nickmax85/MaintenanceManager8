@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.maintenance.view.anlage.AnlageDataController">
+   <children>
+      <VBox spacing="5.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+         <children>
+            <BorderPane>
+               <center>
+                  <HBox alignment="CENTER_LEFT" spacing="10.0" />
+               </center>
+               <left>
+                  <Label text="Anlage" BorderPane.alignment="CENTER">
+                     <graphic>
+                        <ImageView pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../resource/icons/anlage48.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+               </left>
+            </BorderPane>
+            <VBox>
+               <children>
+              <AnchorPane>
+                     <children>
+                        <GridPane hgap="5.0" layoutX="-225.0" layoutY="-122.0" vgap="5.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                           <columnConstraints>
+                              <ColumnConstraints />
+                              <ColumnConstraints />
+                              <ColumnConstraints />
+                              <ColumnConstraints />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints />
+                              <RowConstraints />
+                              <RowConstraints />
+                              <RowConstraints />
+                              <RowConstraints minHeight="25.0" />
+                              <RowConstraints minHeight="25.0" />
+                              <RowConstraints minHeight="25.0" />
+                              <RowConstraints />
+                              <RowConstraints minHeight="10.0" />
+                           </rowConstraints>
+                           <children>
+                              <Label text="Name">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font></Label>
+                              <TextField fx:id="nameField" maxWidth="360.0" prefHeight="29.0" prefWidth="360.0" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font></TextField>
+                              <Label text="Auftrag" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font></Label>
+                              <TextField fx:id="auftragField" maxWidth="185.0" prefHeight="29.0" prefWidth="185.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font></TextField>
+                              <Label text="Status" GridPane.rowIndex="5">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font></Label>
+                              <CheckBox fx:id="statusCheckBox" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font></CheckBox>
+                              <Label text="Auswertungen" GridPane.rowIndex="6">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font></Label>
+                              <CheckBox fx:id="auswertungCheckBox" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font></CheckBox>
+                              <Label text="Abteilung" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font></Label>
+                              <Label text="Produkte" GridPane.rowIndex="7" GridPane.valignment="TOP">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font></Label>
+                              <TextArea fx:id="produkteField" prefHeight="100.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font></TextArea>
+                              <ComboBox fx:id="abteilungComboBox" prefWidth="163.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Label text="Untermenü" GridPane.rowIndex="4">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font></Label>
+                              <CheckBox fx:id="untermenuCheckBox" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font></CheckBox>
+                              <Label text="Equipment" GridPane.columnIndex="2">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font></Label>
+                              <TextField fx:id="equipmentField" prefWidth="110.0" GridPane.columnIndex="3">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font></TextField>
+                              <Label text="Wartungsplan&#10;Web Link" wrapText="true" GridPane.rowIndex="8" GridPane.valignment="TOP">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font></Label>
+                              <Label text="Wartungsart" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font></Label>
+                              <ComboBox fx:id="wartungArtComboBox" onAction="#wartungArtComboBoxEvent" prefWidth="185.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <Hyperlink fx:id="wartungsPlanLink" text="öffnen" GridPane.columnIndex="3" GridPane.rowIndex="8" GridPane.valignment="TOP">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font></Hyperlink>
+                              <TextArea fx:id="wartungsPlanField" prefHeight="80.0" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                           </children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+              <AnchorPane minHeight="0.0" minWidth="0.0">
+                     <children>
+                        <VBox layoutX="10.0" layoutY="10.0" spacing="10.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                           <children>
+                              <Separator prefWidth="200.0" />
+                              <GridPane hgap="5.0" vgap="5.0">
+                                <columnConstraints>
+                                    <ColumnConstraints />
+                                  <ColumnConstraints maxWidth="165.0" minWidth="121.0" prefWidth="165.0" />
+                                    <ColumnConstraints maxWidth="62.0" minWidth="10.0" prefWidth="39.0" />
+                                    <ColumnConstraints maxWidth="50.0" minWidth="8.0" prefWidth="22.0" />
+                                    <ColumnConstraints maxWidth="158.0" minWidth="150.0" prefWidth="154.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                    <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <TextField fx:id="lastWartungStueckField" prefHeight="29.0" prefWidth="168.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font></TextField>
+                                    <DatePicker fx:id="lastWartungDateField" prefHeight="31.0" prefWidth="161.0" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                                    <Label text="Letzte Wartung bei" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font></Label>
+                                    <Label prefHeight="19.0" prefWidth="31.0" text="am" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font></Label>
+                                    <Label text="Stück," GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font></Label>
+                                    <Label text="Erstelldatum">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font></Label>
+                                    <DatePicker fx:id="createDateField" prefHeight="31.0" prefWidth="169.0" GridPane.columnIndex="1" />
+                                 </children>
+                              </GridPane>
+                              <Separator prefWidth="200.0" />
+                              <HBox spacing="10.0">
+                                 <children>
+                                    <GridPane fx:id="warnungenGridPane" hgap="5.0" vgap="5.0">
+                                      <columnConstraints>
+                                        <ColumnConstraints minWidth="0.0" />
+                                        <ColumnConstraints maxWidth="65.0" minWidth="55.0" prefWidth="55.0" />
+                                          <ColumnConstraints />
+                                          <ColumnConstraints />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                          <RowConstraints minHeight="10.0" />
+                                        <RowConstraints minHeight="10.0" />
+                                        <RowConstraints minHeight="10.0" />
+                                      </rowConstraints>
+                                       <children>
+                                          <Label text="Warnung" GridPane.rowIndex="1">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font></Label>
+                                          <TextField fx:id="warnungStueckField" maxWidth="50.0" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+                                          <TextField fx:id="fehlerStueckField" maxWidth="50.0" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+                                          <Label text="\%" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font></Label>
+                                          <Label text="\%" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font></Label>
+                                          <Label text="Fehler" GridPane.rowIndex="2">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font></Label>
+                                          <Label text="Warnungseinstellungen" underline="true" GridPane.columnSpan="4">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font></Label>
+                                       </children>
+                                    </GridPane>
+                                    <Separator orientation="VERTICAL" prefWidth="0.0" />
+                                    <GridPane fx:id="stueckzahlGridPane" hgap="5.0" vgap="5.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints />
+                                          <ColumnConstraints />
+                                          <ColumnConstraints hgrow="SOMETIMES" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints />
+                                          <RowConstraints />
+                                          <RowConstraints />
+                                          <RowConstraints />
+                                       </rowConstraints>
+                                       <children>
+                                          <Label text="Jahr" GridPane.rowIndex="2">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font></Label>
+                                          <TextField fx:id="jahresStueckzahlField" maxWidth="100.0" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font></TextField>
+                                          <Label text="aktuell" GridPane.rowIndex="1">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font></Label>
+                                          <TextField fx:id="aktuelleStueckzahlField" maxWidth="100.0" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font></TextField>
+                                          <Label text="Intervall" GridPane.rowIndex="3">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font></Label>
+                                          <TextField fx:id="wartungStueckIntervallField" maxWidth="100.0" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font></TextField>
+                                          <Label text="Stück" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font></Label>
+                                          <Label text="Stück" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font></Label>
+                                          <Label text="Stück" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font></Label>
+                                          <Label text="Stueckzahl" underline="true">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font></Label>
+                                       </children>
+                                    </GridPane>
+                                    <Separator orientation="VERTICAL" prefWidth="0.0" />
+                                    <GridPane fx:id="calendarWartungGridPane" hgap="5.0" vgap="5.0">
+                                      <columnConstraints>
+                                        <ColumnConstraints />
+                                        <ColumnConstraints maxWidth="120.0" minWidth="74.0" prefWidth="74.0" />
+                                          <ColumnConstraints maxWidth="87.0" minWidth="41.0" prefWidth="87.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints />
+                                        <RowConstraints minHeight="10.0" />
+                                      </rowConstraints>
+                                       <children>
+                                          <Label text="Kalender" underline="true">
+                                             <tooltip>
+                                                <Tooltip text="Kalenderwartung&#10;Eine Kalenderwartung betrifft immer&#10;nur die Anlage und nicht die Stationen&#10;Sie hat immer Vorrang gegenüber Stückzahl&#10;" />
+                                             </tooltip>
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <Button mnemonicParsing="false" onAction="#handleCalendarWartungen" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                             <graphic>
+                                                <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../../resource/icons/calendar48.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </Button>
+                                          <Label text="Verwaltung" GridPane.rowIndex="1">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font></Label>
+                                       </children>
+                                    </GridPane>
+                                 </children>
+                              </HBox>
+                              <Separator prefWidth="200.0" />
+                              <HBox fillHeight="false" spacing="10.0">
+                                 <children>
+                                    <GridPane fx:id="dateGridPane" hgap="5.0" vgap="5.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints />
+                                          <RowConstraints />
+                                          <RowConstraints />
+                                          <RowConstraints />
+                                       </rowConstraints>
+                                       <children>
+                                          <Label text="Zeitintervall" underline="true">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font></Label>
+                                          <Label text="Intervall" GridPane.rowIndex="2">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font></Label>
+                                          <HBox alignment="CENTER_LEFT" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                             <children>
+                                                <ComboBox fx:id="wartungDateIntervallComboBox" prefWidth="100.0" />
+                                                <ComboBox fx:id="wartungDateUnitComboBox" prefWidth="150.0" />
+                                             </children>
+                                          </HBox>
+                                          <Label text="Warnung" GridPane.rowIndex="3">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font></Label>
+                                          <HBox alignment="CENTER_LEFT" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                             <children>
+                                                <ComboBox fx:id="warnungDateWarnungComboBox" prefWidth="100.0" />
+                                                <ComboBox fx:id="warnungDateUnitComboBox" prefWidth="150.0" />
+                                                <Label text="vorher">
+                                                   <font>
+                                                      <Font size="13.0" />
+                                                   </font></Label>
+                                             </children>
+                                          </HBox>
+                                          <Label text="nächste Wartung" GridPane.rowIndex="1">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font></Label>
+                                          <Label fx:id="nextWartungDate" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font></Label>
+                                       </children>
+                                    </GridPane>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

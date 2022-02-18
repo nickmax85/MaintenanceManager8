@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.CheckMenuItem?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane fx:id="pane" onKeyPressed="#handleUpdate" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.maintenance.view.station.StationOverviewController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="Verwalten">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#handleStationenOverviewDialog" text="Stationen">
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../resource/icons/machine48.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </MenuItem>
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Ansicht">
+              <items>
+                  <CheckMenuItem fx:id="dragResizeCheckMenuItem" mnemonicParsing="false" text="Objekte verschieben">
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../resource/icons/move48.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </CheckMenuItem>
+              </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <TabPane fx:id="tabPane">
+         <tabs>
+            <Tab closable="false" text="Maintenance">
+               <content>
+                  <BorderPane fx:id="maintenancePane" />
+               </content>
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../resource/icons/maintenance48.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Tab>
+            <Tab fx:id="tpmTab" closable="false" text="Total Productivity Management">
+              <content>
+                  <BorderPane fx:id="tpmPane" />
+              </content>
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../resource/icons/tpm.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Tab>
+            <Tab fx:id="robotTab" closable="false" text="Robotic">
+              <content>
+                  <BorderPane fx:id="robotPane" />
+              </content>
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../resource/icons/robot.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Tab>
+         </tabs>
+      </TabPane>
+   </center>
+</BorderPane>

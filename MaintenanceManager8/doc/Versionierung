@@ -1,0 +1,16 @@
+Behebt der Entwickler lediglich einen Fehler, ohne die Abwärtskompatibilität zu beeinträchtigen, 
+wird lediglich die Revisionsnummer um 1 erhöht – beispielsweise von 1.0.18 auf 1.0.19.
+
+Fügt der Entwickler neue Funktionalität hinzu, wird hingegen die Nebenversionsnummer um 1 erhöht, 
+vorausgesetzt, die neu hinzugefügte Funktionalität beeinträchtigt die Abwärtskompatibilität nicht – beispielsweise von 1.0.19 auf 1.1.0.
+
+Beeinträchtigt der Entwickler die Abwärtskompatibilität, wird schließlich die Hauptversionsnummer um 1 
+erhöht – beispielsweise von 1.1.0 auf 2.0.0.
+
+
+
+
+
+Optional kann man eine Versionsnummer um ein Suffix ergänzen, um Vorabversionen zu kennzeichnen. 
+Ein solches Suffix wird durch einen Trennstrich eingeleitet und besteht danach aus beliebigen 
+alphanumerischen Zeichen, beispielsweise 1.0.0-beta1.

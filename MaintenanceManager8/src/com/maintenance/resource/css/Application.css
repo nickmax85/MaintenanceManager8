@@ -1,0 +1,59 @@
+
+
+.panel{
+	-fx-border-color: grey;
+   	-fx-border-width: 0.3;
+	-fx-border-radius: 6.0;
+	-fx-padding: 5.0;
+	-fx-background-radius: 8.0;	
+}
+
+.panel:hover{
+  	-fx-border-width: 0.3;
+   	-fx-effect: innershadow(three-pass-box, rgba(0.0,0.0,0.0,0.8), 2.0, 0.0, 0.0, 0.0); 	
+}
+
+.label-header {
+    -fx-font-size: 32.0pt;
+    -fx-font-family: "Segoe UI Light";
+    -fx-fill: black;
+    -fx-opacity: 1.0;
+}
+
+
+#pane-grey{
+	-fx-background-color: linear-gradient(to bottom left,  #ebf1f6, #94b1e0);
+}
+
+#pane-green{
+	-fx-background-color: linear-gradient(to bottom left,  lightgreen, #00ff00);
+}
+
+#pane-yellow{
+	-fx-background-color: linear-gradient(to bottom left,  #ffff66, #ffff4d);
+}
+
+#pane-orange{
+	-fx-background-color: linear-gradient(to bottom left,  #FFC04C, #FFA500);
+}
+
+#pane-red{
+	-fx-background-color: linear-gradient(to bottom left, lightcoral, #FF0000);
+}
+.progress-bar{
+	 -fx-pref-width: 80.0;
+	 -fx-pref-height: 14.0;
+	
+}
+
+.progress-bar > .bar {
+    -fx-background-color: linear-gradient(to bottom, derive(-fx-accent, -7.0%), derive(-fx-accent, 0.0%), derive(-fx-accent, -3.0%), derive(-fx-accent, -9.0%) );
+    -fx-background-insets: 1.0 1.0 2.0 1.0;
+    -fx-background-radius: 0.583em; 
+    -fx-background-radius: 1.0;
+    -fx-padding: 0.4em;
+   
+    
+  
+  
+}

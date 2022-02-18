@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.maintenance.view.anlageuser.AnlageUserDataController">
+   <children>
+      <VBox spacing="10.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+         <children>
+            <Label text="Mailverteiler - TPM">
+               <graphic>
+                  <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../resource/icons/mail48.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="nameLabel" text="Label">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <TableView fx:id="table" VBox.vgrow="SOMETIMES">
+              <columns>
+                <TableColumn fx:id="auswahlColumn" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" text="Auswahl" />
+                  <TableColumn fx:id="lastNameColumn" minWidth="-Infinity" prefWidth="250.0" text="Nachname" />
+                  <TableColumn fx:id="firstNameColumn" minWidth="-Infinity" prefWidth="250.0" text="Vorname" />
+                  <TableColumn fx:id="mailColumn" minWidth="-Infinity" prefWidth="300.0" text="Mail" />
+              </columns>
+            </TableView>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

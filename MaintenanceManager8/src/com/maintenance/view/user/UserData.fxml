@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.maintenance.view.user.UserDataController">
+   <children>
+      <VBox spacing="10.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+         <children>
+            <Label text="User">
+               <graphic>
+                  <ImageView pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../resource/icons/person48.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <GridPane hgap="10.0" vgap="10.0">
+               <columnConstraints>
+                  <ColumnConstraints maxWidth="103.0" minWidth="31.0" />
+                  <ColumnConstraints />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Label text="Nachname" />
+                  <TextField fx:id="lastNameField" maxWidth="250.0" prefHeight="25.0" prefWidth="250.0" GridPane.columnIndex="1" />
+                  <Label text="Vorname" GridPane.rowIndex="1" />
+                  <TextField fx:id="firstNameField" maxWidth="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label text="Mail" GridPane.rowIndex="3" />
+                  <TextField fx:id="mailField" prefWidth="350.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <Separator prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="2" />
+               </children>
+            </GridPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

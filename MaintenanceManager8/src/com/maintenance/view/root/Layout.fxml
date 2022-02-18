@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.CheckMenuItem?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane onKeyPressed="#handleUpdateKeyEvent" prefHeight="768.0" prefWidth="1024.0" snapToPixel="false" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.maintenance.view.root.LayoutController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="Datei">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#handleStueckzahlenImport" text="Stückzahlenimport">
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../resource/icons/excel24.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </MenuItem>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+              <MenuItem mnemonicParsing="false" onAction="#handleExit" text="Beenden">
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../resource/icons/close24.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></MenuItem>
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Bearbeiten">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#handleSettings" text="Einstellungen">
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../resource/icons/config24.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></MenuItem>
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Ansicht">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#handleUpdateMenuItem" text="Aktualisieren">
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../resource/icons/refresh24.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></MenuItem>
+                  <CheckMenuItem fx:id="dragResizeCheckMenuItem" mnemonicParsing="false" text="Objekte verschieben">
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../resource/icons/move48.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></CheckMenuItem>
+              </items>
+            </Menu>
+          <Menu mnemonicParsing="false" text="Verwalten">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#handleAnlagen" text="Anlagen">
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../resource/icons/anlage24.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#handleLeerFlaechen" text="Leerflächen">
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../resource/icons/leerflaeche48.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#handleAbteilungen" text="Abteilungen">
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../resource/icons/department24.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></MenuItem>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <Menu mnemonicParsing="false" text="Mailverteiler">
+                    <items>
+                      <MenuItem disable="true" mnemonicParsing="false" text="Maintenance">
+                           <graphic>
+                              <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../resource/icons/maintenance24.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </MenuItem>
+                        <MenuItem mnemonicParsing="false" onAction="#handleAnlageUser" text="Total Productivity Management">
+                           <graphic>
+                              <ImageView fitHeight="24.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../resource/icons/tpm.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </MenuItem>
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleAllgemeineAnhaenge" text="Allgemeine Anhänge">
+                           <graphic>
+                              <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../resource/icons/anhang48.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </MenuItem>
+                    </items>
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../resource/icons/mail48.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Menu>
+                  <MenuItem mnemonicParsing="false" onAction="#handleUser" text="User">
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../resource/icons/person48.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></MenuItem>
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Wartungen">
+              <items>
+                  <MenuItem mnemonicParsing="false" onAction="#handleTreeView" text="Übersicht">
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../resource/icons/table48.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></MenuItem>
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Report">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#handleReportWartungen" text="Wartungen" />
+              </items>
+            </Menu>
+          <Menu mnemonicParsing="false" text="Hilfe">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#handleHilfeStueckzahlenImport" text="Import Stueckzahlen" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleLegende" text="Legende" />
+              <MenuItem mnemonicParsing="false" onAction="#handleAbout" text="Info" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+</BorderPane>

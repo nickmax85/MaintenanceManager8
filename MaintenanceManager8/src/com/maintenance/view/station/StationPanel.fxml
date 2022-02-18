@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="rootPane" onMousePressed="#handleMenu" styleClass="panel" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.maintenance.view.station.StationPanelController">
+   <children>
+      <AnchorPane layoutX="7.0" layoutY="7.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox alignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label fx:id="nameLabel" styleClass="label-view" text="Name">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                     <graphic>
+                        <HBox>
+                           <children>
+                              <ImageView fx:id="linkImage" fitHeight="12.0" fitWidth="12.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../resource/icons/link16.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="anhangImage" fitHeight="12.0" fitWidth="12.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../resource/icons/anhang48.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </HBox>
+                     </graphic>
+                  </Label>
+                  <Label fx:id="equipmentLabel" text="Equipment">
+                     <font>
+                        <Font size="10.0" />
+                     </font></Label>
+                  <Label fx:id="auftragLabel" styleClass="label-view" text="Auftrag">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="aktuelleStueckLabel" styleClass="label-view" text="...">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <ProgressBar fx:id="prozentProgressBar" minHeight="15.0" prefWidth="100.0" progress="0.0" />
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </children>
+   <stylesheets>
+      <URL value="@../../resource/css/JMetroLightTheme.css" />
+      <URL value="@../../resource/css/Application.css" />
+   </stylesheets>
+</AnchorPane>

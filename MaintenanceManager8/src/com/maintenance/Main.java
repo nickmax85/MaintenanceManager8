@@ -75,7 +75,7 @@ public class Main extends Application {
 
 	public final static String VERSION_HAUPT = "1";
 	public final static String VERSION_NEBEN = "0";
-	public final static String REVISION = "28";
+	public final static String REVISION = "29";
 
 	// Java Entwicklungsversion
 	public final static String JDK = "1.8.0_152";
@@ -95,7 +95,7 @@ public class Main extends Application {
 	private static boolean showSplashScreen = Constants.SHOW_SPLASH_SCREEN;
 
 	public final static String APP_ICON = Constants.APP_ICON;
-	//public final static String APP_ICON = Constants.APP_ICON2;
+	// public final static String APP_ICON = Constants.APP_ICON2;
 
 	private static String ip;
 
@@ -123,7 +123,6 @@ public class Main extends Application {
 
 		launch(args);
 
-		
 	}
 
 	/*
@@ -229,7 +228,7 @@ public class Main extends Application {
 		ApplicationProperties.getInstance().setup();
 
 		ApplicationProperties.getInstance().edit("db_host", "ilzmsih01.prodln01.net");
-		
+
 		if (ip != null) {
 			ApplicationProperties.getInstance().edit("db_host", ip);
 			LoginDialog.loggedIn = true;

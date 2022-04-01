@@ -383,52 +383,6 @@ public class ProzentCalc {
 
 	}
 
-	public static boolean isTPMStationWarning(List<Station> stationen) {
-
-		for (Station station : stationen) {
-
-			if (station.isTpm())
-				if (station.isStatus()) {
-
-					float prozent = ProzentCalc.calcProzent(station);
-
-					if (station.getWartungArt() == EWartungArt.STUECKZAHL.ordinal())
-						if (prozent >= station.getWartungStueckWarnung()
-								&& prozent < station.getWartungStueckFehler()) {
-							return true;
-						}
-
-					if (station.getWartungArt() == EWartungArt.TIME_INTERVALL.ordinal()) {
-						Date nextWarnungDate = null;
-						Date nextWartungDate;
-						Date lastWartungDate;
-
-						if (station.getLastWartungDate() != null)
-							lastWartungDate = station.getLastWartungDate();
-						else
-							lastWartungDate = station.getCreateDate();
-
-						nextWartungDate = ProzentCalc.calcNextWartungDate(lastWartungDate,
-								station.getIntervallDateUnit(), station.getWartungDateIntervall());
-
-						nextWarnungDate = ProzentCalc.calcNextWarnungDate(station.getWarnungDateUnit(), lastWartungDate,
-								nextWartungDate, station.getWartungDateWarnung());
-
-						if (Calendar.getInstance().getTime().after(nextWarnungDate)
-								&& Calendar.getInstance().getTime().before(nextWartungDate)) {
-							return true;
-						}
-
-					}
-
-				}
-
-		}
-
-		return false;
-
-	}
-
 	public static boolean isStationFehler(List<Station> stationen) {
 
 		for (Station station : stationen) {
@@ -557,6 +511,94 @@ public class ProzentCalc {
 
 		}
 
+		return false;
+
+	}
+
+	public static boolean isTPMStationWarning(List<Station> stationen) {
+
+		for (Station station : stationen) {
+
+			if (station.isTpm())
+				if (station.isStatus()) {
+
+					float prozent = ProzentCalc.calcProzent(station);
+
+					if (station.getWartungArt() == EWartungArt.STUECKZAHL.ordinal())
+						if (prozent >= station.getWartungStueckWarnung()
+								&& prozent < station.getWartungStueckFehler()) {
+							return true;
+						}
+
+					if (station.getWartungArt() == EWartungArt.TIME_INTERVALL.ordinal()) {
+						Date nextWarnungDate = null;
+						Date nextWartungDate;
+						Date lastWartungDate;
+
+						if (station.getLastWartungDate() != null)
+							lastWartungDate = station.getLastWartungDate();
+						else
+							lastWartungDate = station.getCreateDate();
+
+						nextWartungDate = ProzentCalc.calcNextWartungDate(lastWartungDate,
+								station.getIntervallDateUnit(), station.getWartungDateIntervall());
+
+						nextWarnungDate = ProzentCalc.calcNextWarnungDate(station.getWarnungDateUnit(), lastWartungDate,
+								nextWartungDate, station.getWartungDateWarnung());
+
+						if (Calendar.getInstance().getTime().after(nextWarnungDate)
+								&& Calendar.getInstance().getTime().before(nextWartungDate)) {
+							return true;
+						}
+
+					}
+
+				}
+
+		}
+
+		return false;
+
+	}
+
+	public static boolean isRobotStationWarnung(List<Station> stationen) {
+
+		for (Station station : stationen) {
+
+			if (station.isRobot())
+				if (station.isStatus()) {
+
+					float prozent = ProzentCalc.calcProzent(station);
+
+					if (station.getWartungArt() == EWartungArt.STUECKZAHL.ordinal())
+						if (prozent >= station.getWartungStueckWarnung()) {
+							return true;
+						}
+
+					if (station.getWartungArt() == EWartungArt.TIME_INTERVALL.ordinal()) {
+						Date nextWarnungDate = null;
+						Date nextWartungDate;
+						Date lastWartungDate;
+
+						if (station.getLastWartungDate() != null)
+							lastWartungDate = station.getLastWartungDate();
+						else
+							lastWartungDate = station.getCreateDate();
+
+						nextWartungDate = ProzentCalc.calcNextWartungDate(lastWartungDate,
+								station.getIntervallDateUnit(), station.getWartungDateIntervall());
+
+						nextWarnungDate = ProzentCalc.calcNextWarnungDate(station.getWarnungDateUnit(), lastWartungDate,
+								nextWartungDate, station.getWartungDateWarnung());
+
+						if (Calendar.getInstance().getTime().after(nextWarnungDate)) {
+							return true;
+
+						}
+					}
+
+				}
+		}
 		return false;
 
 	}

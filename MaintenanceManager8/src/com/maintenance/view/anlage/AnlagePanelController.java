@@ -372,7 +372,7 @@ public class AnlagePanelController implements Initializable {
 			else
 				tpmImage.setVisible(false);
 
-			if (ProzentCalc.isRobotStationFehler(stationen))
+			if (ProzentCalc.isRobotStationWarnung(stationen))
 				robotImage.setVisible(true);
 			else
 				robotImage.setVisible(false);
@@ -427,7 +427,7 @@ public class AnlagePanelController implements Initializable {
 			else
 				tpmImage.setVisible(false);
 
-			if (ProzentCalc.isRobotStationFehler(stationen))
+			if (ProzentCalc.isRobotStationWarnung(stationen))
 				robotImage.setVisible(true);
 			else
 				robotImage.setVisible(false);

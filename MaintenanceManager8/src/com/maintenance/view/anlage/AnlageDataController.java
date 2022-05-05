@@ -84,6 +84,8 @@ public class AnlageDataController {
 	@FXML
 	public ComboBox<Abteilung> abteilungComboBox;
 	@FXML
+	public ComboBox<Integer> tpmStepComboBox;
+	@FXML
 	public TextArea produkteField;
 
 	@FXML
@@ -291,6 +293,7 @@ public class AnlageDataController {
 
 		selectWartungDateIntervall();
 		selectWarnungDate();
+		selectTPMStep();
 
 		lastWartungDateField.setValue(null);
 		Calendar createDateCal = Calendar.getInstance();
@@ -573,6 +576,13 @@ public class AnlageDataController {
 			wartungDateIntervallComboBox.setItems(years);
 
 		}
+
+	}
+
+	private void selectTPMStep() {
+
+		tpmStepComboBox.getItems().addAll(0, 1, 2, 3, 4, 5);
+		tpmStepComboBox.getSelectionModel().select(anlage.getTpmStep());
 
 	}
 

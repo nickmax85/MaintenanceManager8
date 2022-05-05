@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="outerPane" onMousePressed="#handleMenu" styleClass="panel" stylesheets="@../../resource/css/Application.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.maintenance.view.anlage.AnlagePanelController">
+<AnchorPane fx:id="outerPane" onMousePressed="#handleMenu" styleClass="panel" stylesheets="@../../resource/css/Application.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.maintenance.view.anlage.AnlagePanelController">
    <children>
       <AnchorPane fx:id="innerPane" layoutX="7.0" layoutY="7.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -50,6 +50,10 @@
                   <ProgressBar fx:id="prozentProgressBar" progress="0.0" />
                   <FlowPane alignment="CENTER" hgap="5.0" prefWrapLength="0.0">
                      <children>
+                        <Label fx:id="tpmStep" text="0">
+                           <font>
+                              <Font size="10.0" />
+                           </font></Label>
                         <ImageView fx:id="tpmExistsImage" fitHeight="12.0" fitWidth="12.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../resource/icons/settings32.png" />

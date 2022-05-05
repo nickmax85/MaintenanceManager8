@@ -27,10 +27,10 @@ public class AnlageJDBCDAO implements AnlageDAO {
 	private final static String GET_ALL_ANLAGEN = "SELECT * FROM anlage ORDER BY name ASC";
 	private final static String GET_ANLAGE = "SELECT * FROM anlage WHERE id = ?";
 
-	private final static String UPDATE_ANLAGE = "UPDATE anlage SET name = ?, equipment = ?, auftragNr = ?, jahresStueck = ?, aktuelleStueck = ?, wartungStueckIntervall = ?, wartungDateIntervall = ?, intervallDateUnit = ?, lastWartungStueck = ?, lastWartungDate = ?, wartungStueckWarnung = ?, wartungStueckFehler = ?, wartungDateWarnung = ?, warnungDateUnit = ?, wartungUeberfaellig = ?, auswertung = ?, subMenu = ?, wartungArt = ?, wartungsPlanLink = ?, createDate = ?, timestamp = ?, user = ?, status = ?, produkte = ?, panelFormatId = ?, abteilungId = ? WHERE id = ?";
+	private final static String UPDATE_ANLAGE = "UPDATE anlage SET name = ?, equipment = ?, auftragNr = ?, jahresStueck = ?, aktuelleStueck = ?, wartungStueckIntervall = ?, wartungDateIntervall = ?, intervallDateUnit = ?, lastWartungStueck = ?, lastWartungDate = ?, wartungStueckWarnung = ?, wartungStueckFehler = ?, wartungDateWarnung = ?, warnungDateUnit = ?, wartungUeberfaellig = ?, auswertung = ?, subMenu = ?, wartungArt = ?, wartungsPlanLink = ?,  tpmStep = ?, createDate = ?, timestamp = ?, user = ?, status = ?, produkte = ?, panelFormatId = ?, abteilungId = ? WHERE id = ?";
 	private final static String UPDATE_ANLAGESTATUS = "UPDATE anlage SET status = ? WHERE id = ?";
 
-	private final static String INSERT_ANLAGE = "INSERT INTO anlage(name, equipment, auftragNr, jahresStueck, aktuelleStueck, wartungStueckIntervall, wartungDateIntervall, intervallDateUnit, lastWartungStueck, lastWartungDate, wartungStueckWarnung, wartungStueckFehler, wartungDateWarnung, warnungDateUnit, wartungUeberfaellig, auswertung, subMenu, wartungArt, wartungsPlanLink, createDate, timestamp, user, status, produkte, panelFormatId, abteilungId) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+	private final static String INSERT_ANLAGE = "INSERT INTO anlage(name, equipment, auftragNr, jahresStueck, aktuelleStueck, wartungStueckIntervall, wartungDateIntervall, intervallDateUnit, lastWartungStueck, lastWartungDate, wartungStueckWarnung, wartungStueckFehler, wartungDateWarnung, warnungDateUnit, wartungUeberfaellig, auswertung, subMenu, wartungArt, wartungsPlanLink, tpmStep, createDate, timestamp, user, status, produkte, panelFormatId, abteilungId) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
 	private final static String DELETE_ANLAGE = "DELETE FROM anlage WHERE id= ?";
 
@@ -121,6 +121,7 @@ public class AnlageJDBCDAO implements AnlageDAO {
 		anlage.setProdukte(rs.getString("produkte"));
 
 		anlage.setWartungsplanLink(rs.getString("wartungsPlanLink"));
+		anlage.setTpmStep(rs.getInt("tpmStep"));
 
 		anlage.setCreateDate(rs.getDate("createDate"));
 		anlage.setTimestampSql(rs.getTimestamp("timestamp"));
@@ -482,23 +483,24 @@ public class AnlageJDBCDAO implements AnlageDAO {
 				ps.setBoolean(17, anlage.isSubMenu());
 				ps.setInt(18, anlage.getWartungArt());
 				ps.setString(19, anlage.getWartungsplanLink());
+				ps.setInt(20, anlage.getTpmStep());
 
 				if (anlage.getCreateDate() != null) {
-					ps.setDate(20, new java.sql.Date(anlage.getCreateDate().getTime()));
+					ps.setDate(21, new java.sql.Date(anlage.getCreateDate().getTime()));
 				} else
-					ps.setDate(20, null);
+					ps.setDate(21, null);
 
 				anlage.setTimestampSql(timestamp);
-				ps.setTimestamp(21, anlage.getTimestampSql());
+				ps.setTimestamp(22, anlage.getTimestampSql());
 
-				ps.setString(22, System.getProperty("user.name"));
-				ps.setBoolean(23, anlage.isStatus());
-				ps.setString(24, anlage.getProdukte());
+				ps.setString(23, System.getProperty("user.name"));
+				ps.setBoolean(24, anlage.isStatus());
+				ps.setString(25, anlage.getProdukte());
 
-				ps.setInt(25, anlage.getPanelFormatId());
-				ps.setInt(26, anlage.getAbteilungId());
+				ps.setInt(26, anlage.getPanelFormatId());
+				ps.setInt(27, anlage.getAbteilungId());
 
-				ps.setInt(27, anlage.getId());
+				ps.setInt(28, anlage.getId());
 
 				ps.executeUpdate();
 				// Zeitstempel erst beschreiben, wenn der Befehl erfolgreich
@@ -590,23 +592,24 @@ public class AnlageJDBCDAO implements AnlageDAO {
 				ps.setBoolean(17, anlage.isSubMenu());
 				ps.setInt(18, anlage.getWartungArt());
 				ps.setString(19, anlage.getWartungsplanLink());
+				ps.setInt(20, anlage.getTpmStep());
 
 				if (anlage.getCreateDate() != null) {
-					ps.setDate(20, new java.sql.Date(anlage.getCreateDate().getTime()));
+					ps.setDate(21, new java.sql.Date(anlage.getCreateDate().getTime()));
 				} else
-					ps.setDate(20, null);
+					ps.setDate(21, null);
 
 				anlage.setTimestampSql(timestamp);
-				ps.setTimestamp(21, anlage.getTimestampSql());
+				ps.setTimestamp(22, anlage.getTimestampSql());
 
-				ps.setString(22, System.getProperty("user.name"));
-				ps.setBoolean(23, anlage.isStatus());
-				ps.setString(24, anlage.getProdukte());
+				ps.setString(23, System.getProperty("user.name"));
+				ps.setBoolean(24, anlage.isStatus());
+				ps.setString(25, anlage.getProdukte());
 
-				ps.setInt(25, anlage.getPanelFormatId());
-				ps.setInt(26, anlage.getAbteilungId());
+				ps.setInt(26, anlage.getPanelFormatId());
+				ps.setInt(27, anlage.getAbteilungId());
 
-				ps.setInt(27, anlage.getId());
+				ps.setInt(28, anlage.getId());
 
 				ps.executeUpdate();
 				// Zeitstempel erst beschreiben, wenn der Befehl erfolgreich

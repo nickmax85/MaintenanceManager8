@@ -59,6 +59,7 @@ public class Anlage {
 	private IntegerProperty warnungDateUnit = new SimpleIntegerProperty();
 	private IntegerProperty wartungUeberfaellig = new SimpleIntegerProperty();
 	private StringProperty wartungsplanLink = new SimpleStringProperty();
+	private IntegerProperty tpmStep = new SimpleIntegerProperty();
 
 	private ObjectProperty<Date> createDate = new SimpleObjectProperty<Date>();
 	private StringProperty user = new SimpleStringProperty();
@@ -249,10 +250,23 @@ public class Anlage {
 	public void setUser(final String user) {
 		this.userProperty().set(user);
 	}
+	
+	public IntegerProperty tpmStepProperty() {
+		return this.tpmStep;
+	}
+
+	public Integer getTpmStep() {
+		return this.tpmStepProperty().get();
+	}
+
+	public void setTpmStep(final Integer tpmStep) {
+		this.tpmStepProperty().set(tpmStep);
+	}
 
 	public StringProperty timestampProperty() {
 		return this.timestamp;
 	}
+	
 
 	public String getTimestamp() {
 		return this.timestampProperty().get();

@@ -83,6 +83,8 @@ public class AnlagePanelController implements Initializable {
 	private ImageView linkImage;
 	@FXML
 	private ImageView tpmExistsImage;
+	@FXML
+	private Label tpmStep;
 
 	private ContextMenu contextMenu = new ContextMenu();
 	private MenuItem wartungen = new MenuItem();
@@ -246,8 +248,6 @@ public class AnlagePanelController implements Initializable {
 				else {
 					try {
 
-					
-
 						if (anlage.getWartungsplanLink().contains("http"))
 							try {
 
@@ -378,10 +378,14 @@ public class AnlagePanelController implements Initializable {
 				robotImage.setVisible(false);
 
 			tpmExistsImage.setVisible(false);
+			tpmStep.setText(null);
 			for (Station s : stationen) {
-				if (s.isTpm() && s.isStatus())
+				if (s.isTpm() && s.isStatus()) {
 					tpmExistsImage.setVisible(true);
-
+					if (anlage.getTpmStep() != 0)
+						tpmStep.setText(String.valueOf(anlage.getTpmStep()));
+			
+				}
 			}
 
 		}
@@ -433,9 +437,13 @@ public class AnlagePanelController implements Initializable {
 				robotImage.setVisible(false);
 
 			tpmExistsImage.setVisible(false);
+			tpmStep.setText(null);
 			for (Station s : stationen) {
-				if (s.isTpm() && s.isStatus())
+				if (s.isTpm() && s.isStatus()) {
 					tpmExistsImage.setVisible(true);
+					if (anlage.getTpmStep() != 0)
+						tpmStep.setText(String.valueOf(anlage.getTpmStep()));
+				}
 
 			}
 
@@ -465,7 +473,7 @@ public class AnlagePanelController implements Initializable {
 		// Kalender Wartung
 		if (cal != null && anlage.getWartungArt() != EWartungArt.TIME_INTERVALL.ordinal()) {
 			nextWartungDate = cal.getDate();
-			
+
 			if (anlage.getLastWartungDate() != null)
 				prozent = ProzentCalc.calcProzent(anlage.getLastWartungDate().getTime(), nextWartungDate.getTime());
 			else

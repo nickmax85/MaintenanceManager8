@@ -68,6 +68,7 @@ public class AnlageEditController {
 		data.setAbteilungId(anlageDataController.abteilungComboBox.getValue().getId());
 		data.setWartungArt(anlageDataController.wartungArtComboBox.getSelectionModel().getSelectedItem().ordinal());
 		data.setWartungsplanLink(anlageDataController.wartungsPlanField.getText());
+		data.setTpmStep(anlageDataController.tpmStepComboBox.getValue());
 
 		if (anlageDataController.createDateField.getValue() != null) {
 			Date date = Date

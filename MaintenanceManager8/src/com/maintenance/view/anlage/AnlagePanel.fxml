@@ -52,7 +52,7 @@
                      <children>
                         <Label fx:id="tpmStep" text="0">
                            <font>
-                              <Font size="10.0" />
+                              <Font name="System Bold" size="12.0" />
                            </font></Label>
                         <ImageView fx:id="tpmExistsImage" fitHeight="12.0" fitWidth="12.0" pickOnBounds="true" preserveRatio="true">
                            <image>

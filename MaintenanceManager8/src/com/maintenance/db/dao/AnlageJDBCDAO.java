@@ -381,17 +381,18 @@ public class AnlageJDBCDAO implements AnlageDAO {
 			ps.setBoolean(17, anlage.isSubMenu());
 			ps.setInt(18, anlage.getWartungArt());
 			ps.setString(19, anlage.getWartungsplanLink());
+			ps.setInt(20, anlage.getTpmStep());
 
-			ps.setDate(20, new java.sql.Date(anlage.getCreateDate().getTime()));
+			ps.setDate(21, new java.sql.Date(anlage.getCreateDate().getTime()));
 			anlage.setTimestampSql(timestamp);
-			ps.setTimestamp(21, anlage.getTimestampSql());
+			ps.setTimestamp(22, anlage.getTimestampSql());
 
-			ps.setString(22, System.getProperty("user.name"));
-			ps.setBoolean(23, anlage.isStatus());
-			ps.setString(24, anlage.getProdukte());
+			ps.setString(23, System.getProperty("user.name"));
+			ps.setBoolean(24, anlage.isStatus());
+			ps.setString(25, anlage.getProdukte());
 
-			ps.setInt(25, anlage.getPanelFormatId());
-			ps.setInt(26, anlage.getAbteilungId());
+			ps.setInt(26, anlage.getPanelFormatId());
+			ps.setInt(27, anlage.getAbteilungId());
 
 			ps.executeUpdate();
 

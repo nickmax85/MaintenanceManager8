@@ -290,8 +290,8 @@ public class StationPanelController {
 						s.setWartungArt(station.getWartungArt());
 						s.setEquipment(station.getEquipment());
 						s.setIntervallDateUnit(station.getIntervallDateUnit());
-						s.setWartungDateIntervall(station.getWartungDateIntervall());	
-						s.setWarnungDateUnit(station.getWarnungDateUnit());					
+						s.setWartungDateIntervall(station.getWartungDateIntervall());
+						s.setWarnungDateUnit(station.getWarnungDateUnit());
 						s.setWartungDateWarnung(station.getWartungDateWarnung());
 						s.setWartungStueckWarnung(station.getWartungStueckWarnung());
 						s.setWartungStueckFehler(station.getWartungStueckFehler());

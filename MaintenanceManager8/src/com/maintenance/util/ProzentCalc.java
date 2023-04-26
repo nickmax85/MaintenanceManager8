@@ -65,6 +65,12 @@ public class ProzentCalc {
 
 		ueberproduktion = produziert - station.getWartungStueckIntervall();
 		prozentUeberproduktion = (float) 100 * ueberproduktion / station.getWartungStueckIntervall();
+		
+//		if (station.getId() == 166) {
+//			logger.info(station.getName());
+//			logger.info(produziert);
+//			logger.info(prozent);
+//		}
 
 		if (prozent >= 100) {
 			prozent = 100 + prozentUeberproduktion;
@@ -76,9 +82,13 @@ public class ProzentCalc {
 
 		// if (prozent > 100.0f)
 		// prozent = 100.0f;
-		//
-		if (prozent < 0.0f)
-			prozent = 0.0f;
+		
+		// 24.04.2023
+		// entfernt, da ansonsten negative Prozentzahlen nicht bemerkt werden
+		//if (prozent < 0.0f)
+		//	prozent = 0.0f;
+		
+		
 
 		return Math.round(prozent);
 	}
@@ -348,6 +358,11 @@ public class ProzentCalc {
 				float prozent = ProzentCalc.calcProzent(station);
 
 				if (station.getWartungArt() == EWartungArt.STUECKZAHL.ordinal())
+					
+					if (prozent < 0) {
+						return true;
+					}
+					
 					if (prozent >= station.getWartungStueckWarnung() && prozent < station.getWartungStueckFehler()) {
 						return true;
 					}

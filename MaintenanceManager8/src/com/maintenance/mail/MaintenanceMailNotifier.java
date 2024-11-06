@@ -9,6 +9,8 @@ import java.util.List;
 import java.util.Properties;
 import java.util.ResourceBundle;
 
+import javax.mail.Authenticator;
+import javax.mail.PasswordAuthentication;
 import javax.mail.Session;
 
 import com.maintenance.db.dto.Anhang;
@@ -80,7 +82,7 @@ public class MaintenanceMailNotifier extends Application {
 				userHome + File.separator + resources.getString("appname"), "application.properties");
 		ApplicationProperties.getInstance().setup();
 
-		ApplicationProperties.getInstance().edit("db_host", "ilzmsih01.prodln01.net");
+		ApplicationProperties.getInstance().edit("db_host", "10.176.45.25");
 
 		if (ip != null) {
 			ApplicationProperties.getInstance().edit("db_host", ip);
@@ -261,8 +263,8 @@ public class MaintenanceMailNotifier extends Application {
 
 	private void requestMailDate(Station station, float prozent, String remark) throws Exception {
 
-		String smtpHostServer = "10.176.199.45";
-		String from = "mpt_ilz_sys_maplat@magna.com";
+		String smtpHostServer = "smtp-auth.magna.global";
+		String from = "svc_LIAT_Maintenance@magna.com";
 
 		String to = "";
 		// String to = "markus.thaler@magna.com,markus.thaler@gmx.at";
@@ -315,9 +317,18 @@ public class MaintenanceMailNotifier extends Application {
 
 		Properties props = System.getProperties();
 		props.put("mail.smtp.host", smtpHostServer);
-		props.put("mail.smtp.auth", "false");
+		props.put("mail.smtp.auth", "true");
+		props.put("mail.smtp.port", "587");
 
-		Session session = Session.getInstance(props, null);
+		//create Authenticator object to pass in Session.getInstance argument
+				Authenticator auth = new Authenticator() {
+					//override the getPasswordAuthentication method
+					protected PasswordAuthentication getPasswordAuthentication() {
+						return new PasswordAuthentication(from, "@VdvCxkoauXdhhz1");
+					}
+				};
+
+		Session session = Session.getInstance(props, auth);
 		session.setDebug(true);
 
 		EmailUtil.sendEmail(session, from, to, null, betreff, text, files);
@@ -339,8 +350,8 @@ public class MaintenanceMailNotifier extends Application {
 	private void requestMailStueckzahl(com.maintenance.db.dto.Station station, float prozent, String remark)
 			throws Exception {
 
-		String smtpHostServer = "10.176.199.45";
-		String from = "mpt_ilz_sys_maplat@magna.com";
+		String smtpHostServer = "smtp-auth.magna.global";
+		String from = "svc_LIAT_Maintenance@magna.com";
 
 		String to = "";
 		// String to = "markus.thaler@magna.com,markus.thaler@gmx.at";
@@ -382,9 +393,18 @@ public class MaintenanceMailNotifier extends Application {
 
 		Properties props = System.getProperties();
 		props.put("mail.smtp.host", smtpHostServer);
-		props.put("mail.smtp.auth", "false");
+		props.put("mail.smtp.auth", "true");
+		props.put("mail.smtp.port", "587");
 
-		Session session = Session.getInstance(props, null);
+		//create Authenticator object to pass in Session.getInstance argument
+				Authenticator auth = new Authenticator() {
+					//override the getPasswordAuthentication method
+					protected PasswordAuthentication getPasswordAuthentication() {
+						return new PasswordAuthentication(from, "@VdvCxkoauXdhhz1");
+					}
+				};
+
+		Session session = Session.getInstance(props, auth);
 		session.setDebug(true);
 
 		EmailUtil.sendEmail(session, from, to, null, betreff, text, files);
@@ -519,8 +539,8 @@ public class MaintenanceMailNotifier extends Application {
 
 	private void requestSystemMail(String remark) throws Exception {
 
-		String smtpHostServer = "10.176.199.45";
-		String from = "mpt_ilz_sys_maplat@magna.com";
+		String smtpHostServer = "smtp-auth.magna.global";
+		String from = "svc_LIAT_Maintenance@magna.com";
 		String text = "";
 		// String to = "";
 		String to = "werner.janisch@magna.com,markus.thaler@magna.com";
@@ -539,9 +559,18 @@ public class MaintenanceMailNotifier extends Application {
 
 		Properties props = System.getProperties();
 		props.put("mail.smtp.host", smtpHostServer);
-		props.put("mail.smtp.auth", "false");
+		props.put("mail.smtp.auth", "true");
+		props.put("mail.smtp.port", "587");
 
-		Session session = Session.getInstance(props, null);
+		//create Authenticator object to pass in Session.getInstance argument
+				Authenticator auth = new Authenticator() {
+					//override the getPasswordAuthentication method
+					protected PasswordAuthentication getPasswordAuthentication() {
+						return new PasswordAuthentication(from, "@VdvCxkoauXdhhz1");
+					}
+				};
+
+		Session session = Session.getInstance(props, auth);
 		session.setDebug(true);
 
 		EmailUtil.sendEmail(session, from, to, null, betreff, text, null);

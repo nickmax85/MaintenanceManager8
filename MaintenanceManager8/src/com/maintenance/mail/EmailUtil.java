@@ -8,9 +8,11 @@ import java.util.Properties;
 import javax.activation.DataHandler;
 import javax.activation.DataSource;
 import javax.activation.FileDataSource;
+import javax.mail.Authenticator;
 import javax.mail.BodyPart;
 import javax.mail.Message;
 import javax.mail.Multipart;
+import javax.mail.PasswordAuthentication;
 import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
@@ -30,18 +32,27 @@ public class EmailUtil {
 
 	private void test() {
 
-		String smtpHostServer = "10.176.199.45";
-		String from = "mpt_ilz_sys_maplat@magna.com";
+		String smtpHostServer = "smtp-auth.magna.global";
+		String from = "svc_LIAT_Maintenance@magna.com";
 
-		String to = "markus.thaler@magna.com,markus.thaler@gmx.at";
+		String to = "markus.thaler@magna.com, markus.thaler@gmx.at";
 		String betreff = "Betreff";
 		String text = "Diese Nachricht wurde an folgende Adressen versendet: " + to;
 
 		Properties props = System.getProperties();
 		props.put("mail.smtp.host", smtpHostServer);
-		props.put("mail.smtp.auth", "false");
+		props.put("mail.smtp.auth", "true");
+		props.put("mail.smtp.port", "587");
 
-		Session session = Session.getInstance(props, null);
+		//create Authenticator object to pass in Session.getInstance argument
+				Authenticator auth = new Authenticator() {
+					//override the getPasswordAuthentication method
+					protected PasswordAuthentication getPasswordAuthentication() {
+						return new PasswordAuthentication(from, "@VdvCxkoauXdhhz1");
+					}
+				};
+		
+		Session session = Session.getInstance(props, auth);
 		session.setDebug(true);
 
 		try {

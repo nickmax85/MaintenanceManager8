@@ -103,7 +103,7 @@
                                  <font>
                                     <Font size="13.0" />
                                  </font></Label>
-                              <Label text="Produkte" GridPane.rowIndex="7" GridPane.valignment="TOP">
+                              <Label text="Bemerkung" GridPane.rowIndex="7" GridPane.valignment="TOP">
                                  <font>
                                     <Font size="13.0" />
                                  </font></Label>

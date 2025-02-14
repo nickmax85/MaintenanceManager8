@@ -101,7 +101,7 @@ public class WartungEditController {
 				else
 					cal = Service.getInstance().getNextCalendarWartung(anlage.getId(), anlage.getCreateDate());
 
-				if (cal != null)
+				if (cal != null && wartung.getId() == 0)
 					Service.getInstance().deleteCalendarWartung(cal);
 
 			}

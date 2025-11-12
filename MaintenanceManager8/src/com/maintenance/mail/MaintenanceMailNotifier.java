@@ -385,7 +385,7 @@ public class MaintenanceMailNotifier extends Application {
 		text += "Wartung ist fällig in " + ProzentCalc.calcNextWartungStueck(station) + " Stück";
 
 		text += "\n\n";
-		text += "Software für Wartungsrückmeldung: " + "http://ilzmsih01.prodln01.net/tpm.html";
+		text += "Software für Wartungsrückmeldung: " + "http://10.176.45.25/tpm.html";
 
 		text += "\n\n";
 		text += "Diese Nachricht wurde an folgende Adressen versendet: " + to.replaceAll(",", "; ");
